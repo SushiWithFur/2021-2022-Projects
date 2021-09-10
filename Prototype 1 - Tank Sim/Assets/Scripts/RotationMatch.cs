@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class RotationMatch : MonoBehaviour
 {
     public GameObject tank;
-    private Vector3 offset = new Vector3(0,7,-10);
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +14,8 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = tank.transform.position + offset;
+        transform.position = tank.transform.position;
         transform.rotation = tank.transform.rotation;
-
+    
     }
 }

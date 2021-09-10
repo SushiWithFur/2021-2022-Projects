@@ -739,10 +739,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 038f79802a9484097ba0b2f2a40fb468, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a5c7c581b5894d60ad0746d6dc9090a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tank: {fileID: 1394775029}
+  target: {fileID: 1394775030}
+  distance: 20
+  height: 10
+  heightDamping: 2
+  rotationDamping: 3
 --- !u!1 &1020737725
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +905,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b202b796b5134d4f96d2127ffa87dcc, type: 3}
   m_PrefabInstance: {fileID: 882382043}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1394775030 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3b202b796b5134d4f96d2127ffa87dcc, type: 3}
+  m_PrefabInstance: {fileID: 882382043}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &1394775031
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -942,8 +951,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cedf088a7b3435d8f2c0a94cc90d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  turnSpeed: 15
   hInput: 0
   vInput: 0
 --- !u!1001 &1684890693
@@ -1129,6 +1136,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 441c14276870b4094b575d23b67f9f0a, type: 3}
+--- !u!1 &1908235760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1908235761}
+  - component: {fileID: 1908235762}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1908235761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908235760}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1394775030}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1908235762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908235760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9e48f286c174bc29c6b250182bdd6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tank: {fileID: 1394775029}
 --- !u!1001 &953481705217920007
 PrefabInstance:
   m_ObjectHideFlags: 0
