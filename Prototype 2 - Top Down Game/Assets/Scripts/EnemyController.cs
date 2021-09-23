@@ -40,4 +40,13 @@ public class EnemyController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, -yRange, transform.position.z);
         }    
     }
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.gameObject.CompareTag("bullet"))
+        {
+            Destroy(gameObject);  
+        }
+       
+    }
 }
