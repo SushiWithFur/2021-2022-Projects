@@ -12,9 +12,7 @@ public class PlayerController : MonoBehaviour
     public float xRange = 10.53f;
     public float yRange = 5.00f;
 
-    public GameObject bullet;
-
-    private Vector3 offset = new Vector3(0, 0.7f, 0);
+    
 
     // Update is called once per frame
     void Update()
@@ -51,14 +49,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, yRange, transform.position.z);
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(bullet, transform.position + offset, bullet.transform.rotation);
-        }
 
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-          
-        }
+
     }
 }

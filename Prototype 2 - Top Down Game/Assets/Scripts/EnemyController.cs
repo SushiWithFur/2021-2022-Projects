@@ -8,9 +8,14 @@ public class EnemyController : MonoBehaviour
     public float xRange = 9.9f;
     public float yRange = 4.35f;
     // Start is called before the first frame update
+    public Transform player;
+    
+    private Rigidbody2D rb;
+
+    private Vector2 movement;
     void Start()
     {
-        
+        rb = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -39,8 +44,14 @@ public class EnemyController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, -yRange, transform.position.z);
         }    
-    }
 
+        Vector3 direction = player.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        rb.rotation = angle;
+        direction.Normalize();
+        movement = direction;
+    }
+    
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if(other.gameObject.CompareTag("bullet"))
