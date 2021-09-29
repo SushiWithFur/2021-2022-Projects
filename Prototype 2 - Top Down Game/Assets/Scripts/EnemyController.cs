@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour
     public float yRange = 4.35f;
     // Start is called before the first frame update
     public Transform player;
+
+    public float moveSpeed = 5f;
     
     private Rigidbody2D rb;
 
@@ -51,7 +53,15 @@ public class EnemyController : MonoBehaviour
         direction.Normalize();
         movement = direction;
     }
+    void moveCharacter(Vector2 direction)
+    {
+        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+    }
     
+    private void FixedUpdate() 
+    {
+        moveCharacter(movement);
+    }
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if(other.gameObject.CompareTag("bullet"))

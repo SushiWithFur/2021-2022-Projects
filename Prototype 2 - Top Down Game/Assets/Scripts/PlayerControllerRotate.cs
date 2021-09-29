@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerControllerRotate : MonoBehaviour
 {
     public GameObject bullet;
-
-    private Vector3 offset = new Vector3(0, 0.7f, 0);
+    public Transform firePoint;
     public GameObject player;
     // Update is called once per frame
     void Update()
@@ -45,7 +44,7 @@ public class PlayerControllerRotate : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(bullet, transform.position + offset, player.transform.rotation);
+            Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
         }
 
 
