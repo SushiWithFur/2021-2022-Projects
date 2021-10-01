@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Kill"))
         {
+            print("You were killed by an Enemy!! Lol, what a noob. git gud kid");
             Destroy(gameObject);  
         }
     }

@@ -66,6 +66,7 @@ public class EnemyController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("bullet"))
         {
+            print("You defeated an enemy... you monster, what did it ever do to you :(");
             Destroy(gameObject);  
         }
        
