@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 1327882650}
   - component: {fileID: 1327882655}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -617,7 +617,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  lookSensitivity: 1
+  jumpForce: 5
+  lookSensitivity: 5
   maxLookX: 45
   minLookX: -45
 --- !u!1 &1919721325
