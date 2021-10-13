@@ -17,14 +17,24 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         hInput = Input.GetAxis("Horizontal");
         vInput = Input.GetAxis("Vertical");
 
         transform.Translate(Vector3.right * playerSpeed * Time.deltaTime * hInput);
 
-    if (Input.GetKeyDown(KeyCode.Space))  //makes player jump
-    {
-        GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
+        if(Input.GetButtonDown("Jump"))
+         Jump();
+    
     }
+
+    void Jump()
+    {
+        Ray ray = new Ray(transform.position, Vector2.down);
+        if (Physics.Raycast(ray, 1.1f))  //makes player jump
+        {
+         GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
+         print("DID IT");
+        }
     }
 }
