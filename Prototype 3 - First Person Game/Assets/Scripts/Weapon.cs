@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour
 
     public GameObject bulletPrefab;
 
-    public transform muzzle;
+    public Transform muzzle;
 
     public float bulletSpeed;
     
