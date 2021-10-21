@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private Camera cam;
     private Rigidbody rb;
     private Weapon weapon;
+    public bool isOnGround;
 
     void Awake() 
     {
@@ -44,6 +45,17 @@ public class PlayerController : MonoBehaviour
     }
     void Move()
     {
+        if(Input.GetKey("left shift"))
+        {
+            moveSpeed = 10f;
+        }
+        else
+        {
+            if(isOnGround = true)
+            {
+                moveSpeed = 5f;
+            }
+        }
         float x = Input.GetAxis("Horizontal") * moveSpeed;
         float z = Input.GetAxis("Vertical") * moveSpeed;
 
@@ -72,5 +84,16 @@ public class PlayerController : MonoBehaviour
         // apply rotation to camera
         cam.transform.localRotation = Quaternion.Euler(-rotX,0,0);
         transform.eulerAngles += Vector3.up * y;
+    }
+    void onCollisionEnter(Collision other)
+    {
+        if(other.gameObject.CompareTag("isOnGround"))
+        {
+            isOnGround = true;
+        }
+    }
+    private void OnCollisionExit(Collision other) 
+    {
+        isOnGround = false;
     }
 }
