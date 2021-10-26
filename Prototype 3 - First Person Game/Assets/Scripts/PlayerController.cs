@@ -91,6 +91,10 @@ public class PlayerController : MonoBehaviour
         {
             isOnGround = true;
         }
+        else
+        {
+            isOnGround = false;
+        }
     }
     private void OnCollisionExit(Collision other) 
     {
