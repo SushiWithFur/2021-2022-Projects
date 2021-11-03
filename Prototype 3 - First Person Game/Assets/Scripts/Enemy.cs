@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        curHP = maxHP;
         //Gather Components
         weapon = GetComponent<Weapon>();
         target = FindObjectOfType<PlayerController>().gameObject;
@@ -53,8 +54,38 @@ public class Enemy : MonoBehaviour
             path.RemoveAt(0);
     }
     // Update is called once per frame
+    public void TakeDamage(int damage)
+    {
+        curHP -= damage;
+
+        if(curHP <= 0)
+            Die();
+    }
+    void Die()
+    {
+        Destroy(gameObject);
+    }
     void Update()
     {
-        
+        //look at target
+        Vector3 dir =(target.transform.position - transform.position).normalized;
+        float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+
+        transform.eulerAngles = Vector3.up * angle;
+        //get distance from enemy to player tartget
+        float dist = Vector3.Distance(transform.position, target.transform.position);
+
+        if(dist <= attackRange)
+        {
+            if(weapon.CanShoot())
+            {
+                weapon.Shoot();
+            }
+            else
+            {
+                ChaseTarget();
+            }
+            
+        }
     }
 }
