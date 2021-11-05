@@ -80,12 +80,11 @@ public class Enemy : MonoBehaviour
             if(weapon.CanShoot())
             {
                 weapon.Shoot();
-            }
-            else
+            } 
+        }
+        else
             {
                 ChaseTarget();
             }
-            
-        }
     }
 }

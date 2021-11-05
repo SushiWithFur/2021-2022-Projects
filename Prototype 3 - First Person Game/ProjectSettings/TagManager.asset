@@ -6,6 +6,7 @@ TagManager:
   tags:
   - bulletWallStop
   - isOnGround
+  - Enemy
   layers:
   - Default
   - TransparentFX

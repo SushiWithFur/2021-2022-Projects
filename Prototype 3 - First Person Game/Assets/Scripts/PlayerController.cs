@@ -12,11 +12,15 @@ public class PlayerController : MonoBehaviour
     public float maxLookX; // lowest down position we can look
     public float minLookX; // highest up position we can look
     private float rotX; //current X rotation of the camera
-    //game objects and components
+    [Header("Game Objects and Componenets")]
     private Camera cam;
     private Rigidbody rb;
     private Weapon weapon;
     public bool isOnGround;
+    [Header("Stats")]
+    public int curHP;
+    public int maxHP;
+
 
     void Awake() 
     {
@@ -28,6 +32,18 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    public void TakeDamage(int damage)
+    {
+        curHP -= damage;
+
+        if(curHP <= 0)
+            Die();
+    }
+
+    void Die()
+    {
+
+    }
     // Update is called once per frame
     void Update()
     {
