@@ -39,10 +39,18 @@ public class PlayerController : MonoBehaviour
         if(curHP <= 0)
             Die();
     }
+    public void GiveHealth (int amountToGive)
+    {
+        curHP = Mathf.Clamp(curHP + amountToGive, 0, maxHP);
+    }
 
+    public void GiveAmmo (int amountToGive)
+    {
+        weapon.curAmmo = Mathf.Clamp(weapon.curAmmo + amountToGive, 0, weapon.maxAmmo);
+    }
     void Die()
     {
-
+        Application.LoadLevel(Application.loadedLevel);
     }
     // Update is called once per frame
     void Update()
