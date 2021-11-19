@@ -28,7 +28,7 @@ public class Pickups : MonoBehaviour
         startPos = transform.position;
     }
 
-    void onTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {

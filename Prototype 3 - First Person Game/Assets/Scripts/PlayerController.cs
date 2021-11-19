@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
         cam.transform.localRotation = Quaternion.Euler(-rotX,0,0);
         transform.eulerAngles += Vector3.up * y;
     }
-    void onCollisionEnter(Collision other)
+    void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.CompareTag("isOnGround"))
         {
@@ -123,5 +123,11 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionExit(Collision other) 
     {
         isOnGround = false;
+    }
+
+    void OnTriggerEnter(Collider other) 
+    {
+        if(other.CompareTag("DeathPlane"))
+            curHP = 0;
     }
 }
