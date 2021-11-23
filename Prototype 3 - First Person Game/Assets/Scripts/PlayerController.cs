@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [Header("Stats")]
     public int curHP;
     public int maxHP;
-
+    public int deathcount;
 
     void Awake() 
     {
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
         cam = Camera.main;   
         rb = GetComponent<Rigidbody>();
         weapon = GetComponent<Weapon>();
+        deathcount = 0;
         //disable cursor
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -39,18 +41,14 @@ public class PlayerController : MonoBehaviour
         if(curHP <= 0)
             Die();
     }
-    public void GiveHealth (int amountToGive)
-    {
-        curHP = Mathf.Clamp(curHP + amountToGive, 0, maxHP);
-    }
-
-    public void GiveAmmo (int amountToGive)
-    {
-        weapon.curAmmo = Mathf.Clamp(weapon.curAmmo + amountToGive, 0, weapon.maxAmmo);
-    }
     void Die()
     {
-        Application.LoadLevel(Application.loadedLevel);
+        if(deathcount == 0)
+        {
+            SceneManager.LoadScene(1);
+            deathcount = 1;
+        }
+        
     }
     // Update is called once per frame
     void Update()
@@ -109,25 +107,18 @@ public class PlayerController : MonoBehaviour
         cam.transform.localRotation = Quaternion.Euler(-rotX,0,0);
         transform.eulerAngles += Vector3.up * y;
     }
-    void OnCollisionEnter(Collision other)
-    {
-        if(other.gameObject.CompareTag("isOnGround"))
-        {
-            isOnGround = true;
-        }
-        else
-        {
-            isOnGround = false;
-        }
-    }
-    private void OnCollisionExit(Collision other) 
-    {
-        isOnGround = false;
-    }
-
     void OnTriggerEnter(Collider other) 
     {
         if(other.CompareTag("DeathPlane"))
             curHP = 0;
+    }
+    public void GiveHealth (int amountToGive)
+    {
+        curHP = Mathf.Clamp(curHP + amountToGive, 0, maxHP);
+    }
+
+    public void GiveAmmo (int amountToGive)
+    {
+        weapon.curAmmo = Mathf.Clamp(weapon.curAmmo + amountToGive, 0, weapon.maxAmmo);
     }
 }

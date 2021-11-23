@@ -33,7 +33,7 @@ public class Weapon : MonoBehaviour
     {
         if(Time.time - lastShootTime >= shootRate)
         {
-            if(curAmmo > 0 || infiniteAmmo == true);
+            if(curAmmo > 0 || infiniteAmmo == true)
                 return true;
         }
 
@@ -44,6 +44,7 @@ public class Weapon : MonoBehaviour
     {
         lastShootTime = Time.time;
         curAmmo--;
+
         GameObject bullet = bulletPool.GetObject();
         bullet.transform.position = muzzle.position;
         bullet.transform.rotation = muzzle.rotation;

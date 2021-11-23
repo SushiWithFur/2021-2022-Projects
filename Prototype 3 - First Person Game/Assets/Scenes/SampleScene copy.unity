@@ -5836,7 +5836,7 @@ MonoBehaviour:
   curHP: 66
   maxHP: 66
   scoreToGive: 100
-  moveSpeed: 20
+  moveSpeed: 10
   attackRange: 10
   yPathOffset: 2
 --- !u!54 &1746759079
