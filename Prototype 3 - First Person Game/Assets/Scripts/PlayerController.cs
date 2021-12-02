@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance 
+    {
+        get;
+        set;
+    }
     //movement
     public float moveSpeed;
     public float jumpForce;
