@@ -52,8 +52,7 @@ public class EnemyTwo : MonoBehaviour
         if(chaseTarget = true)
         {
              yield return new WaitForSeconds(10);
-             transform.position = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z + 5
-             );
+             transform.position = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z + 3);
         }
     }
     // Update is called once per frame

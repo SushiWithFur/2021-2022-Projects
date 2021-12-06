@@ -4963,7 +4963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559a0b19c7351430094c955a298f5193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objPrefab: {fileID: 4688602669106262688, guid: 2a153482b69dd45a18546bc96173bf8e, type: 3}
+  objPrefab: {fileID: 3665454262244723661, guid: 2a153482b69dd45a18546bc96173bf8e, type: 3}
   createOnStart: 10
 --- !u!1 &1329052960
 GameObject:
