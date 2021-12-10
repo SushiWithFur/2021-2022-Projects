@@ -51,5 +51,8 @@ public class Weapon : MonoBehaviour
 
         //set velocity
         bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed;
+
+        if(isPlayer)
+            GameUI.instance.UpdateAmmoText(curAmmo, maxAmmo);
     }
 }

@@ -45,10 +45,13 @@ public class PlayerController : MonoBehaviour
 
         if(curHP <= 0)
             Die();
+        
+        GameUI.instance.UpdateHealthBar(curHP, maxHP);
     }
     void Die()
     {
-        if(deathcount == 0)
+        int rand = Random.Range(1,10);
+        if(rand == 10)
         {
             SceneManager.LoadScene(1);
             deathcount = 1;
@@ -120,10 +123,12 @@ public class PlayerController : MonoBehaviour
     public void GiveHealth (int amountToGive)
     {
         curHP = Mathf.Clamp(curHP + amountToGive, 0, maxHP);
+        GameUI.instance.UpdateHealthBar(curHP, maxHP);
     }
 
     public void GiveAmmo (int amountToGive)
     {
         weapon.curAmmo = Mathf.Clamp(weapon.curAmmo + amountToGive, 0, weapon.maxAmmo);
+        GameUI.instance.UpdateAmmoText(weapon.curAmmo, weapon.maxAmmo);
     }
 }

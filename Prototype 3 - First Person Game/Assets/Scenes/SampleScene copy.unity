@@ -3131,6 +3131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 829599752}
   - component: {fileID: 829599751}
+  - component: {fileID: 829599753}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3150,9 +3151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b5de2556c9c43aebb94879b2e64ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  ammoText: {fileID: 0}
-  healthBarFill: {fileID: 0}
+  scoreText: {fileID: 1028711357}
+  ammoText: {fileID: 1478685182}
+  healthBarFill: {fileID: 42312146}
   pauseMenu: {fileID: 0}
   endGameScreen: {fileID: 0}
   endGameHeaderText: {fileID: 0}
@@ -3171,6 +3172,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &829599753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829599750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c75526bf05d90490785ea578ae59f817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreToWin: 0
+  curScore: 0
+  gamePaused: 0
 --- !u!1 &829695194
 GameObject:
   m_ObjectHideFlags: 0
