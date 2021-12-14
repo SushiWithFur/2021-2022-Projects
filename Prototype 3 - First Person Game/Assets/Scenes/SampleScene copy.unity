@@ -632,7 +632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559a0b19c7351430094c955a298f5193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objPrefab: {fileID: 6536361094286793759, guid: f0edb0e340c5942138aa7a5ddb1191f3, type: 3}
+  objPrefab: {fileID: 5220087716311325125, guid: f0edb0e340c5942138aa7a5ddb1191f3, type: 3}
   createOnStart: 10
 --- !u!114 &84469572
 MonoBehaviour:
@@ -1532,7 +1532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559a0b19c7351430094c955a298f5193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objPrefab: {fileID: 6536361094286793759, guid: f0edb0e340c5942138aa7a5ddb1191f3, type: 3}
+  objPrefab: {fileID: 5220087716311325125, guid: f0edb0e340c5942138aa7a5ddb1191f3, type: 3}
   createOnStart: 10
 --- !u!114 &350639681
 MonoBehaviour:
@@ -3155,9 +3155,9 @@ MonoBehaviour:
   ammoText: {fileID: 1478685182}
   healthBarFill: {fileID: 42312146}
   pauseMenu: {fileID: 0}
-  endGameScreen: {fileID: 0}
-  endGameHeaderText: {fileID: 0}
-  endGameScoreText: {fileID: 0}
+  endGameScreen: {fileID: 470292162}
+  endGameHeaderText: {fileID: 1375065923}
+  endGameScoreText: {fileID: 677087850}
 --- !u!4 &829599752
 Transform:
   m_ObjectHideFlags: 0
@@ -3184,7 +3184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75526bf05d90490785ea578ae59f817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreToWin: 0
+  scoreToWin: 20000
   curScore: 0
   gamePaused: 0
 --- !u!1 &829695194
@@ -6777,7 +6777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559a0b19c7351430094c955a298f5193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objPrefab: {fileID: 6536361094286793759, guid: f0edb0e340c5942138aa7a5ddb1191f3, type: 3}
+  objPrefab: {fileID: 5220087716311325125, guid: f0edb0e340c5942138aa7a5ddb1191f3, type: 3}
   createOnStart: 10
 --- !u!114 &1722341320
 MonoBehaviour:
@@ -8584,7 +8584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559a0b19c7351430094c955a298f5193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objPrefab: {fileID: 6536361094286793759, guid: f0edb0e340c5942138aa7a5ddb1191f3, type: 3}
+  objPrefab: {fileID: 5220087716311325125, guid: f0edb0e340c5942138aa7a5ddb1191f3, type: 3}
   createOnStart: 10
 --- !u!114 &2133311210
 MonoBehaviour:

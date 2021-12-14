@@ -49,7 +49,7 @@ public class EnemyTwo : MonoBehaviour
 
     IEnumerator waiter()
     {
-        if(chaseTarget = true)
+        if(chaseTarget == true)
         {
              yield return new WaitForSeconds(10);
              transform.position = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z + 3);
