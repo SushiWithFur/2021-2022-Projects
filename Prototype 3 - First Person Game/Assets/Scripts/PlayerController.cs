@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     public int curHP;
     public int maxHP;
     public int deathcount;
+    public GameUI health;
 
     void Awake() 
     {
@@ -42,32 +43,25 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //initialize the UI
-        GameUI.instance.UpdateHealthBar(curHP, maxHP);
+        health.ChangeHealth(5);
         GameUI.instance.UpdateScoreText(0);
         GameUI.instance.UpdateAmmoText(weapon.curAmmo, weapon.maxAmmo);
     }
     public void TakeDamage(int damage)
     {
         curHP -= damage;
-
-        if(curHP <= 0)
-            Die();
         
-        GameUI.instance.UpdateHealthBar(curHP, maxHP);
+        if(curHP <= 0)
+        {
+            Die();
+        }
+
+        health.ChangeHealth(curHP);
+        
     }
     void Die()
     {
-        int rand = Random.Range(1,10);
-        if(rand == 10)
-        {
-            SceneManager.LoadScene(1);
-            deathcount = 1;
-        }
-        else
-        {
-            GameManager.instance.LoseGame();
-        }
-        
+        SceneManager.LoadScene("Game Over");
     }
     // Update is called once per frame
     void Update()

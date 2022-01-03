@@ -18,10 +18,17 @@ public class GameUI : MonoBehaviour
     [Header("End Game Screne")]
     public GameObject endGameScreen;
     public TextMeshProUGUI endGameHeaderText;
-    public TextMeshProUGUI endGameScoreText;
+    
 
     // Instance
     public static GameUI instance;
+
+    [Header("healthBar")]
+    public GameObject healthBarFull;
+    public GameObject heatlhBarFourFifths;
+    public GameObject healthBarThreeFifths;
+    public GameObject healthBarTwoFifths;
+    public GameObject healthBarOneFifth;
 
     void Awake()
     {
@@ -62,9 +69,6 @@ public class GameUI : MonoBehaviour
 
     public void SetEndGameScreen( bool won, int score)
     {
-        endGameScreen.SetActive(true);
-        endGameHeaderText.text = won == true ? "You Win. Cool." : "You loose. Uncool.";
-        endGameHeaderText.color = won == true ? Color.green : Color.red;
         endGameScoreText.text = "<b>score</b>\n" + score; 
     }
 
@@ -81,5 +85,53 @@ public class GameUI : MonoBehaviour
     public void OnMenuButton()
     {
         SceneManager.LoadScene("Menu");
+    }    
+    public void ChangeHealth(int health)
+    {
+        switch (health)
+        {
+            case 5:
+                healthBarFull.SetActive(true);
+                heatlhBarFourFifths.SetActive(false);
+                healthBarThreeFifths.SetActive(false);
+                healthBarTwoFifths.SetActive(false);
+                healthBarOneFifth.SetActive(false);
+                break;
+            case 4:
+                healthBarFull.SetActive(false);
+                heatlhBarFourFifths.SetActive(true);
+                healthBarThreeFifths.SetActive(false);
+                healthBarTwoFifths.SetActive(false);
+                healthBarOneFifth.SetActive(false);
+                break;
+            case 3:
+                healthBarFull.SetActive(false);
+                heatlhBarFourFifths.SetActive(false);
+                healthBarThreeFifths.SetActive(true);
+                healthBarTwoFifths.SetActive(false);
+                healthBarOneFifth.SetActive(false);
+                break;
+            case 2:
+                healthBarFull.SetActive(false);
+                heatlhBarFourFifths.SetActive(false);
+                healthBarThreeFifths.SetActive(false);
+                healthBarTwoFifths.SetActive(true);
+                healthBarOneFifth.SetActive(false);
+                break;
+            case 1:
+                healthBarFull.SetActive(false);
+                heatlhBarFourFifths.SetActive(false);
+                healthBarThreeFifths.SetActive(false);
+                healthBarTwoFifths.SetActive(false);
+                healthBarOneFifth.SetActive(true);
+                break;
+            default:
+                healthBarFull.SetActive(true);
+                heatlhBarFourFifths.SetActive(false);
+                healthBarThreeFifths.SetActive(false);
+                healthBarTwoFifths.SetActive(false);
+                healthBarOneFifth.SetActive(false);
+                break;
+        }
     }
 }
