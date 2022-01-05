@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     public bool gamePaused;
     //Instance of Game Manager
     public static GameManager instance;
+    public GameOver gameover;
 
     void Awake()
     {
@@ -59,15 +61,14 @@ public class GameManager : MonoBehaviour
     public void WinGame()
     {
         //set end game sreen
-        GameUI.instance.SetEndGameScreen(true,curScore);
+        SceneManager.LoadScene("Win Screen");
+        gameover.gameOver();
     }
 
     public void LoseGame()
     {
         //set the end game screen
-        GameUI.instance.SetEndGameScreen(false, curScore);
-        Time.timeScale = 0.0f;
-        gamePaused = true;
+
 
     }
 }

@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public int maxHP;
     public int deathcount;
     public GameUI health;
+    public GameOver gameOver;
 
     void Awake() 
     {
@@ -61,7 +62,9 @@ public class PlayerController : MonoBehaviour
     }
     void Die()
     {
+        gameOver.gameOver();
         SceneManager.LoadScene("Game Over");
+
     }
     // Update is called once per frame
     void Update()

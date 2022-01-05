@@ -2992,6 +2992,7 @@ GameObject:
   - component: {fileID: 829599752}
   - component: {fileID: 829599751}
   - component: {fileID: 829599753}
+  - component: {fileID: 829599754}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3017,7 +3018,6 @@ MonoBehaviour:
   pauseMenu: {fileID: 1677364858}
   endGameScreen: {fileID: 0}
   endGameHeaderText: {fileID: 0}
-  endGameScoreText: {fileID: 0}
   healthBarFull: {fileID: 42312144}
   heatlhBarFourFifths: {fileID: 187049138}
   healthBarThreeFifths: {fileID: 1154007686}
@@ -3049,9 +3049,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75526bf05d90490785ea578ae59f817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreToWin: 20000
+  scoreToWin: 500
   curScore: 0
   gamePaused: 0
+  gameover: {fileID: 829599754}
+--- !u!114 &829599754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829599750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1012260a13c06427e8abff21832e12b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &829695194
 GameObject:
   m_ObjectHideFlags: 0
@@ -5345,6 +5358,7 @@ MonoBehaviour:
   maxHP: 5
   deathcount: 0
   health: {fileID: 829599751}
+  gameOver: {fileID: 829599754}
 --- !u!114 &1327882656
 MonoBehaviour:
   m_ObjectHideFlags: 0

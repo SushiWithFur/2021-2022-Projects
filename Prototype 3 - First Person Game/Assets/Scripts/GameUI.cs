@@ -67,11 +67,6 @@ public class GameUI : MonoBehaviour
         pauseMenu.SetActive(paused);
     }
 
-    public void SetEndGameScreen( bool won, int score)
-    {
-        endGameScoreText.text = "<b>score</b>\n" + score; 
-    }
-
     public void OnResumeButton()
     {
         GameManager.instance.TogglePauseGame();
