@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour
     public float shootRate;
     private float lastShootTime;
     private bool isPlayer;
+    public AudioSource bulletSound;
 
     void Awake() 
     {
@@ -51,6 +52,7 @@ public class Weapon : MonoBehaviour
 
         //set velocity
         bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed;
+        bulletSound.Play();
 
         if(isPlayer)
             GameUI.instance.UpdateAmmoText(curAmmo, maxAmmo);

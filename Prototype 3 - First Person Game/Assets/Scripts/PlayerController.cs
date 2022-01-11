@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     public int deathcount;
     public GameUI health;
     public GameOver gameOver;
+    public AudioSource healthPickupSound;
+    public AudioSource reloadSound;
 
     void Awake() 
     {
@@ -138,11 +140,13 @@ public class PlayerController : MonoBehaviour
     {
         curHP = Mathf.Clamp(curHP + amountToGive, 0, maxHP);
         GameUI.instance.UpdateHealthBar(curHP, maxHP);
+        healthPickupSound.Play();
     }
 
     public void GiveAmmo (int amountToGive)
     {
         weapon.curAmmo = Mathf.Clamp(weapon.curAmmo + amountToGive, 0, weapon.maxAmmo);
         GameUI.instance.UpdateAmmoText(weapon.curAmmo, weapon.maxAmmo);
+        reloadSound.Play();
     }
 }
